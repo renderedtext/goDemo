@@ -11,6 +11,7 @@ blocks:
             - echo $SEMAPHORE_PIPELINE_ID
             - echo $HOME
             - pwd
+            - cd goDemo
             - ls -al
             - cat hw.go
             - echo $SEMAPHORE_GIT_DIR
@@ -32,6 +33,7 @@ blocks:
         - name: Build hw.go 
           commands:
             - checkout
+            - cd goDemo
             - go build hw.go
             - ls -l ./hw
             - file ./hw

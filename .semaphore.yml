@@ -11,6 +11,7 @@ blocks:
             - echo $SEMAPHORE_PIPELINE_ID
             - echo $HOME
             - pwd
+            - uname -a
             - ls -al
             - cat hw.go
             - echo $SEMAPHORE_GIT_DIR

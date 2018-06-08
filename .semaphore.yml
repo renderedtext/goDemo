@@ -10,6 +10,7 @@ blocks:
             - checkout
             - echo $SEMAPHORE_PIPELINE_ID
             - echo $HOME
+            - cd goDemo
             - pwd
             - ls -al
             - cat hw.go

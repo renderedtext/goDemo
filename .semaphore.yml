@@ -16,14 +16,14 @@ blocks:
             - cat hw.go
             - echo $SEMAPHORE_GIT_DIR
             - echo $VAR1
+            - echo $SEMAPHORE_PIPELINE_ID
+            - echo $SEMAPHORE_JOB_RESULT
       prologue:
           commands:
             - echo Prologue command 1
             - echo Prologue command 2
             - echo $PI
             - echo $SEMAPHORE_GIT_DIR
-            - echo $SEMAPHORE_PIPELINE_ID
-            - echo $SEMAPHORE_JOB_RESULT
       env_vars:
            - name: VAR1
              value: Environment Variable 1

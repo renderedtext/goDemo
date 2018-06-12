@@ -16,8 +16,6 @@ blocks:
             - cat hw.go
             - echo $SEMAPHORE_GIT_DIR
             - echo $VAR1
-            - echo $SEMAPHORE_PIPELINE_ID
-            - echo $SEMAPHORE_PIPELINE_NAME
       prologue:
           commands:
             - echo Prologue command 1

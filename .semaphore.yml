@@ -42,8 +42,6 @@ blocks:
         - name: PATH variable
           commands:
             - echo $PATH
-        - name: Command File
-          cmd_file: command_file
       epilogue:
           commands:
             - echo Epilogue command 1

@@ -1,17 +1,45 @@
 version: "v1.0"
-name: Using Environment Variable.
+name: YAML file example for Go project.
 semaphore_image: standard
 blocks:
- - name: Environment variables
+ - name: Inspect Linux environment
    build:
       jobs:
-        - name: Inspect Environment variables
+        - name: Execute hw.go 
           commands:
             - echo $SEMAPHORE_PIPELINE_ID
+            - echo $HOME
+            - echo $SEMAPHORE_GIT_DIR
+            - pwd
+            - ls -al
+            - cat hw.go
             - echo $VAR1
             - echo $PI
+      prologue:
+          commands:
+            - checkout
+            - cd $SEMAPHORE_GIT_DIR
       env_vars:
            - name: VAR1
              value: Environment Variable 1
            - name: PI
              value: "3.14159"
+
+ - name: Build Go project
+   build:
+      jobs:
+        - name: Build hw.go 
+          commands:
+            - checkout
+            - cd goDemo
+            - go build hw.go
+            - ls -l ./hw
+            - file ./hw
+            - ./hw
+        - name: PATH variable
+          commands:
+            - echo $PATH
+      epilogue:
+          commands:
+            - echo $SEMAPHORE_JOB_RESULT
+            - echo $SEMAPHORE_PIPELINE_ID

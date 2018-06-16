@@ -6,4 +6,4 @@ blocks:
    build:
       jobs:
         - name: Execute command_file
-         cmd_file: /home/runner/goDemo/command_file
+         cmd_file: $SEMAPHORE_GIT_DIR/command_file

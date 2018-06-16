@@ -25,9 +25,9 @@ blocks:
            - name: PI
              value: "3.14159"
 
- - name: Calling external file
+ - name: Calling text file
    build:
-	  jobs:
+      jobs:
         - name: Using command_file
           cmd_file: command_file
       prologue:

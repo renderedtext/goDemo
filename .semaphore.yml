@@ -1,5 +1,5 @@
 version: "v1.0"
-name: YAML file example for Go project.
+name: epilogue and prologue YAML example.
 semaphore_image: standard
 blocks:
  - name: Inspect Linux environment
@@ -11,34 +11,10 @@ blocks:
             - echo $HOME
             - echo $SEMAPHORE_GIT_DIR
             - pwd
-            - ls -al
-            - cat hw.go
-            - echo $VAR1
-            - echo $PI
       prologue:
           commands:
             - checkout
             - cd $SEMAPHORE_GIT_DIR
-      env_vars:
-           - name: VAR1
-             value: Environment Variable 1
-           - name: PI
-             value: "3.14159"
-
- - name: Build Go project
-   build:
-      jobs:
-        - name: Build hw.go 
-          commands:
-            - checkout
-            - cd goDemo
-            - go build hw.go
-            - ls -l ./hw
-            - file ./hw
-            - ./hw
-        - name: PATH variable
-          commands:
-            - echo $PATH
       epilogue:
           commands:
             - echo $SEMAPHORE_JOB_RESULT

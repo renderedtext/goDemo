@@ -7,21 +7,18 @@ blocks:
       jobs:
         - name: Execute hw.go 
           commands:
-            - checkout
             - echo $SEMAPHORE_PIPELINE_ID
             - echo $HOME
+            - echo $SEMAPHORE_GIT_DIR
             - pwd
-            - cd goDemo
             - ls -al
             - cat hw.go
-            - echo $SEMAPHORE_GIT_DIR
             - echo $VAR1
+            - echo $PI
       prologue:
           commands:
-            - echo Prologue command 1
-            - echo Prologue command 2
-            - echo $PI
-            - echo $SEMAPHORE_GIT_DIR
+            - checkout
+            - cd $SEMAPHORE_GIT_DIR
       env_vars:
            - name: VAR1
              value: Environment Variable 1
@@ -34,7 +31,7 @@ blocks:
         - name: Build hw.go 
           commands:
             - checkout
-            - cd goDemo
+            - cd goproject
             - go build hw.go
             - ls -l ./hw
             - file ./hw
@@ -44,5 +41,5 @@ blocks:
             - echo $PATH
       epilogue:
           commands:
-            - echo Epilogue command 1
-            - echo Epilogue command 2
+            - echo $SEMAPHORE_JOB_RESULT
+            - echo $SEMAPHORE_PIPELINE_ID

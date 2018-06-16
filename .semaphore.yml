@@ -39,6 +39,7 @@ blocks:
         - name: PATH variable
           commands:
             - echo $PATH
+            - ls /arasdasd
       epilogue:
           commands:
             - echo $SEMAPHORE_JOB_RESULT

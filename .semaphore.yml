@@ -40,8 +40,7 @@ blocks:
           commands:
             - echo $PATH
       prologue:
-		  commands:
-		    cmd_file: /home/runner/goDemo/command_file
+		  cmd_file: /home/runner/goDemo/command_file
       epilogue:
           commands:
             - echo $SEMAPHORE_JOB_RESULT

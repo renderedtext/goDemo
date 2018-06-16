@@ -15,6 +15,10 @@ blocks:
             - cat hw.go
             - echo $VAR1
             - echo $PI
+	  jobs:
+          - name: Using command_file		  
+          - name: Using command_file
+            cmd_file: command_file
       prologue:
           commands:
             - checkout

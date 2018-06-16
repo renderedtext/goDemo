@@ -15,8 +15,6 @@ blocks:
             - cat hw.go
             - echo $VAR1
             - echo $PI
-		- name: Command file
-		  cmd_file: /home/runner/goDemo/command_file			
       prologue:
           commands:
             - checkout

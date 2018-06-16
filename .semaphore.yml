@@ -1,21 +1,9 @@
 version: "v1.0"
-name: epilogue and prologue YAML example.
+name: Using the cmd_file command.
 semaphore_image: standard
 blocks:
- - name: Inspect Linux environment
+ - name: Calling external command file
    build:
       jobs:
-        - name: Execute hw.go 
-          commands:
-            - echo $SEMAPHORE_PIPELINE_ID
-            - echo $HOME
-            - echo $SEMAPHORE_GIT_DIR
-            - pwd
-      prologue:
-          commands:
-            - checkout
-            - cd $SEMAPHORE_GIT_DIR
-      epilogue:
-          commands:
-            - echo $SEMAPHORE_JOB_RESULT
-            - echo $SEMAPHORE_PIPELINE_ID
+        - name: Execute command_file
+         cmd_file: /home/runner/goDemo/command_file

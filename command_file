@@ -1,2 +1,3 @@
 echo "Command File"
+echo "Executing..."
 echo "Exit command_file"

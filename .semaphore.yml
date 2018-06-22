@@ -25,6 +25,17 @@ blocks:
            - name: PI
              value: "3.14159"
 
+
+ - name: Build Go project
+   build:
+      jobs:
+        - name: Calling plain text file
+          cmd_file: command_file
+      prologue:
+          commands:
+            - checkout
+            - cd $SEMAPHORE_GIT_DIR
+
  - name: Build Go project
    build:
       jobs:

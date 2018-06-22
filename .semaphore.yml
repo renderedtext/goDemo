@@ -26,7 +26,7 @@ blocks:
              value: "3.14159"
 
 
- - name: Build Go project
+ - name: Using cmd_file 
    build:
       jobs:
         - name: Calling plain text file

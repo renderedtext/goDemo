@@ -17,6 +17,7 @@ blocks:
             - echo $PI
       prologue:
           commands:
+            - checkout
             - echo $SEMAPHORE_GIT_DIR
       env_vars:
            - name: VAR1
@@ -32,6 +33,7 @@ blocks:
           cmd_file: command_file
       prologue:
           commands:
+            - checkout
             - echo $SEMAPHORE_GIT_DIR
 
  - name: Build Go project
@@ -39,6 +41,7 @@ blocks:
       jobs:
         - name: Build hw.go 
           commands:
+            - cd $SEMAPHORE_GIT_DIR
             - go build hw.go
             - ls -l ./hw
             - file ./hw

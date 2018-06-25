@@ -25,23 +25,12 @@ blocks:
            - name: PI
              value: "3.14159"
 
-
- - name: Using cmd_file 
-   build:
-      jobs:
-        - name: Calling plain text file
-          cmd_file: command_file
-      prologue:
-          commands:
-            - checkout
-            - echo $SEMAPHORE_GIT_DIR
-
  - name: Build Go project
    build:
       jobs:
         - name: Build hw.go 
           commands:
-            - cd $SEMAPHORE_GIT_DIR
+            - checkout
             - go build hw.go
             - ls -l ./hw
             - file ./hw
@@ -53,3 +42,4 @@ blocks:
           commands:
             - echo $SEMAPHORE_JOB_RESULT
             - echo $SEMAPHORE_PIPELINE_ID
+

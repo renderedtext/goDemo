@@ -28,6 +28,12 @@ blocks:
            - name: PI
              value: "3.14159"
 
+ - name: Calling external file
+   task:
+      jobs:
+        - name: Execute command_file
+          cmd_file: command_file
+
  - name: Build Go project
    task:
       jobs:

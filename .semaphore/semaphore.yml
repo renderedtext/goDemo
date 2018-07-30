@@ -1,5 +1,5 @@
 version: "v1.0"
-name: YAML example that builds a Go project.
+name: Complex Semaphore 2.0 project that works with Go.
 agent:
   machine:
     type: e1-standard-2

@@ -1,5 +1,5 @@
 version: "v1.0"
-name: Complex Semaphore 2.0 project that works with Go.
+name: Go Semaphore 2.0 project
 agent:
   machine:
     type: e1-standard-2

@@ -1,4 +1,4 @@
-version: "v1.0"
+version: v1.0
 name: A Go project in Semaphore 2.0
 agent:
   machine:

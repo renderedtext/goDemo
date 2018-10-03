@@ -18,7 +18,6 @@ blocks:
             - cat hw.go
             - echo $VAR1
             - echo $PI
-            - sleep 360
       prologue:
           commands:
             - checkout

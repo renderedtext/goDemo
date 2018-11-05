@@ -12,10 +12,6 @@ blocks:
         - name: Build and Execute hw.go 
           commands:
             - checkout
-            - echo $SEMAPHORE_GIT_DIR
-            - pwd
-            - ls -al
-            - cat hw.go
             - go build hw.go
             - ./hw
 

@@ -1,26 +1,13 @@
 version: v1.0
-name: A Go project in Semaphore 2.0
+name: Initial Pipeline
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-
 blocks:
- - name: Build with default Go version
-   task:
+  - name: 'Block #1'
+    task:
       jobs:
-        - name: Build and Execute hw.go 
+        - name: 'Job #1'
           commands:
             - checkout
-            - go build hw.go
-            - ./hw
-
- - name: Run with Go 1.11
-   task:
-      jobs:
-        - name: Run hw.go 
-          commands:
-            - checkout
-            - sem-version go 1.11
-            - go run hw.go
-
